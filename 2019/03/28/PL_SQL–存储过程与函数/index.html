@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>tags | PIKA~</title>
+  <title>PIKA~</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="业精于勤而荒于嬉，行成于思而毁于随">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+  <meta name="description" content="PL/SQL–存储过程与函数 存储过程 语法结构 CREATE [OR REPLACE] PROCEDURE procedure_name [(parameter1 [mode1] datatype1, parameter2 [mode2] datatype2, . . .)] IS|AS PL/SQL Block; create or replace procedure GET_EMP_BY_I">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PIKA~">
+<meta property="og:url" content="http://yoursite.com/2019/03/28/PL_SQL–存储过程与函数/index.html">
 <meta property="og:site_name" content="PIKA~">
-<meta property="og:description" content="业精于勤而荒于嬉，行成于思而毁于随">
+<meta property="og:description" content="PL/SQL–存储过程与函数 存储过程 语法结构 CREATE [OR REPLACE] PROCEDURE procedure_name [(parameter1 [mode1] datatype1, parameter2 [mode2] datatype2, . . .)] IS|AS PL/SQL Block; create or replace procedure GET_EMP_BY_I">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-28T02:15:26.230Z">
+<meta property="og:updated_time" content="2019-03-28T02:10:43.897Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="业精于勤而荒于嬉，行成于思而毁于随">
+<meta name="twitter:title" content="PIKA~">
+<meta name="twitter:description" content="PL/SQL–存储过程与函数 存储过程 语法结构 CREATE [OR REPLACE] PROCEDURE procedure_name [(parameter1 [mode1] datatype1, parameter2 [mode2] datatype2, . . .)] IS|AS PL/SQL Block; create or replace procedure GET_EMP_BY_I">
   
     <link rel="alternative" href="/atom.xml" title="PIKA~" type="application/atom+xml">
   
@@ -150,27 +150,78 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-PL_SQL–存储过程与函数" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      tags
-    </h1>
-  
-
-        
-        <a href="/tags/index.html" class="archive-article-date">
-  	<time datetime="2019-03-27T10:10:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-27</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>PL/SQL–存储过程与函数</p>
+<p>存储过程</p>
+<p>语法结构</p>
+<pre><code>CREATE [OR REPLACE] PROCEDURE procedure_name
+[(parameter1 [mode1] datatype1,
+parameter2 [mode2] datatype2,
+. . .)]
+IS|AS
+PL/SQL Block;
+create or replace procedure GET_EMP_BY_ID
+  (emp_id in number, 
+   full_name out varchar2,--参数不能给长度
+   salary out number) 
+is   
+begin
+  select first_name || &apos;.&apos; || last_name, salary
+    into full_name, salary
+    from employees
+    where employee_id = emp_id;
+exception
+  when no_data_found then
+    dbms_output.put_line(&apos;没有找到数据&apos;);
+end GET_EMP_BY_ID;
+</code></pre><p>存储过程的调用</p>
+<pre><code>--存储过程的调用--
+declare 
+  v_name varchar2(20);
+  v_salary number;
+begin 
+--调用方式一：必须参数对应
+--get_emp_by_id(100, v_name, v_salary);
+--调用方式二：可以互换参数位置
+  get_emp_by_id(full_name =&gt; v_name, salary =&gt; v_salary, emp_id =&gt; 40);
+--调用方式三：直接写过程名称，如get_emp_by_id不要括号；会使用默认值  
+  dbms_output.put_line(&apos;姓名：&apos; || v_name );
+  dbms_output.put_line(&apos;薪水：&apos; || v_salary );
+end;
+</code></pre><p>含有in out参数的存储过程</p>
+<pre><code>create or replace procedure ADD_SELF
+  (v_value in out number) 
+is
+begin
+  v_value := v_value + 1;
+end ADD_SELF;
+</code></pre><p>含有in out参数的存储过程</p>
+<pre><code>declare 
+  v_value number := 10;
+begin 
+  add_self(v_value =&gt; v_value);
+  dbms_output.put_line(&apos;自增结果：&apos; || v_value);
+end;
+</code></pre><p>函数</p>
+<pre><code>create or replace function FUN_ADD_SELF 
+  (v_value number default 0)
+return number    --返回类型 
+is
+begin
+  return v_value + 1;--返回返回值
+end FUN_ADD_SELF;
+</code></pre><p>调用方式与存储过程一样</p>
+<p>存储过程与函数的区别</p>
+<ol>
+<li>返回值的区别,函数有1个返回值,而存储过程是通过参数返回的,可以有多个或者没有</li>
+<li>调用的区别,函数可以在查询语句中直接调用,而存储过程必须单独调用.</li>
+<li>函数一般情况下是用来计算并返回一个计算结果而存储过程一般是用来完成特定的数据操作（比如修改、插入数据库表或执行某些DDL语句等等）</li>
+</ol>
+
       
 
       
@@ -249,7 +300,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/tags/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/28/PL_SQL–存储过程与函数/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -311,7 +362,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
