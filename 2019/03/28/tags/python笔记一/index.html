@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/3 | PIKA~</title>
+  <title>PIKA~</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="业精于勤而荒于嬉，行成于思而毁于随">
-<meta property="og:type" content="website">
+  <meta name="description" content="python语法 1. python文件的执行过程：hello.py  python解释器  字节码文件（能被python解释器识别，不能被计算机识别） python解释器  二进制文件  内存（运行） 打印结果 2. 字节码文件分为.pyc（python -m py_compile hello.py），.pyo（python -O -m py_compile hello.py），pyc文件可以被">
+<meta property="og:type" content="article">
 <meta property="og:title" content="PIKA~">
-<meta property="og:url" content="http://yoursite.com/archives/2019/03/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/03/28/tags/python笔记一/index.html">
 <meta property="og:site_name" content="PIKA~">
-<meta property="og:description" content="业精于勤而荒于嬉，行成于思而毁于随">
+<meta property="og:description" content="python语法 1. python文件的执行过程：hello.py  python解释器  字节码文件（能被python解释器识别，不能被计算机识别） python解释器  二进制文件  内存（运行） 打印结果 2. 字节码文件分为.pyc（python -m py_compile hello.py），.pyo（python -O -m py_compile hello.py），pyc文件可以被">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-28T03:01:48.722Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PIKA~">
-<meta name="twitter:description" content="业精于勤而荒于嬉，行成于思而毁于随">
+<meta name="twitter:description" content="python语法 1. python文件的执行过程：hello.py  python解释器  字节码文件（能被python解释器识别，不能被计算机识别） python解释器  二进制文件  内存（运行） 打印结果 2. 字节码文件分为.pyc（python -m py_compile hello.py），.pyo（python -O -m py_compile hello.py），pyc文件可以被">
   
     <link rel="alternative" href="/atom.xml" title="PIKA~" type="application/atom+xml">
   
@@ -153,106 +154,146 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-tags/python笔记一" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>python语法</p>
+<p><strong>1. python文件的执行过程</strong>：hello.py  python解释器  字节码文件（能被python解释器识别，不能被计算机识别） python解释器  二进制文件  内存（运行） 打印结果</p>
+<p><strong>2. 字节码文件</strong>分为.pyc（python -m py_compile hello.py），.pyo（python -O -m py_compile hello.py），pyc文件可以被直接执行且能提升加载效率，但不能提升运行效率，pyo文件是优化编译的pyc文件</p>
+<p><strong>3.eclipse 搭建开发Python环境</strong><br>    按视频的还新建不了项目，还需配置pydev解释器<br>    安装好pydev后， 需要配置Python解释器。<br>    在Eclipse菜单栏中，点击Windows -&gt;Preferences.<br>    在对话框中，点击pyDev-&gt;Interpreter - Python.  点击New按钮， 选择        python.exe的路径, 打开后显示出一个包含很多复选框的窗口. 点OK</p>
+<p><strong>流行的编程语言11 种</strong>：<br>PHP,C++,JSP,Python,Coldfusion,basic,Pascal,C#,COBOL,GO,Javascript<br>龟叔1989年圣诞节开发的，荷兰人，Guido van Rossum<br>Python的特点：尤雅、明确、简单<br>Python适合的领域：1、Web网站和各种网络服务<br>                  2、系统工具和脚本<br>                  3、作为浇水语言把其他语言开发的模块包装起来方便使用<br>Python不适合的领域<br>   1、贴近硬件的代码（首选C）<br>   2、移动开发：iOS/Android有各自的开发语言（ObjiC,Swift/Java）<br>   3、游戏开发：C/C++<br>实际应用：<br>   1、国外：Youtobe<br>   2、国内：豆瓣、搜狐邮箱<br>   3、开源云计算平台：openstack<br>   4、广泛应用于各大公司：Google,Yahoo,NASA(美国航空航天局)<br>Python、Java、C对比<br>   Python是解释执行类型编程语言，运行速度慢，代码量少。<br>  Python程序代码开发量少，这才是各大公司用它的语言。<br>Python的缺点：<br>1、运行速度慢<br>好消息是CPU速度越来越来块，但是硬盘和网络的读取速度相比而言很慢了。所以大量的应用程序不需要这么快的速度，而且运行速度的瓶颈往往不在于Python代码，而是数据库的操作和网络调用。F1赛车和出租车在北京3环路上行驶的道理一样的，虽然F1赛车理论时速高达400公里/时，但是大家都知道3环上堵车的时候的时候，时速才只有20公里/时。所以，作为乘客，即使坐在F1上，也只能20公里/时速度前进<br>2、Python源代码不能加密<br>  互联网时代，不再靠卖源码挣钱，而是靠网站等方式提供服务来挣钱</p>
+<p><strong>《语法一》</strong><br>1整数：.十六进制用0x前缀和0-9，a-f表示，例如：0xff00，0xa5b4c3d2，等等。<br>2.浮点数：对于很大或很小的浮点数，就必须用科学计数法表示，把10用e替代，1.23x10^9就是1.23e9。<br>3.字符串：以’’或””括起来的任意文本，比如’abc’，”xyz”等等。请注意，’’或””本身只是一种表示方式，不是字符串的一部分，因此，字符串’abc’只有a，b，c这3个字符。<br>4.布尔值：一个布尔值只有True、False两种值。<br>布尔值可以用and、or和not运算。<br>5.空值：空值是Python里一个特殊的值，用None表示。None不能理解为0，因为0是有意义的，而None是一个特殊的空值。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/28/tags/python笔记一/" class="archive-article-date">
-  	<time datetime="2019-03-28T04:26:33.612Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-28</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/28/tags/python笔记一/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/28/python笔记一/" class="archive-article-date">
-  	<time datetime="2019-03-28T03:21:39.438Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-27</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/28/python笔记二/" class="archive-article-date">
-  	<time datetime="2019-03-28T03:21:12.037Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-27</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/28/python笔记一/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/28/PL_SQL–存储过程与函数/" class="archive-article-date">
-  	<time datetime="2019-03-28T02:13:25.067Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-27</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -275,8 +316,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
